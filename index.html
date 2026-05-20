@@ -2,11 +2,158 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Justin Teng | Web Developer & Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js">
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">JT<span>.</span></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#un-goal">UN Goal</a></li>
+                <li><a href="design-thinking.html">Design Thinking</a></li>
+                <li><a href="behind-curtain.html">Behind the Curtain</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+        </nav>
+    </header>
+    <main>
+
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="greeting">Hi, I'm</p>
+                    <h1>Justin Teng</h1>
+                    <p class="title">Web Developer | Mechanical Engineering Enthusiast | F1 Fanatic | Reader</p>
+                    <p class="description">I build responsive, accessible websites with clean code. When I'm not coding, you'll find me analyzing F1 race strategies, studying mechanical systems, or getting lost in a good book.</p>
+                    <a href="#portfolio" class="btn-primary">Explore My World →</a>
+                </div>
+                <div class="hero-image">
+        
+                    <img src="images/profile.jpg" alt="Justin Teng - Web developer, engineering enthusiast, and F1 fan">
+                </div>
+            </div>
+        </section>
+
+
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2>My Passions & Projects</h2>
+                <p class="section-subtitle">Three things that drive me — both on and off the screen</p>
+                <div class="portfolio-grid">
+                    
+                    <div class="portfolio-card"></div>
+                        <img src="images/f1-racing.jpg" alt="Formula 1 car racing on track at high speed">
+                        <div class="card-content">
+                            <h3>🏎️ Formula 1</h3>
+                            <p>I follow every race weekend — from qualifying to pit strategy. My favorite team is RedBull, and I never miss the Chinese GP. I analyze telemetry data and love debating tire strategies.</p>
+                            <span class="tech-tag">F1 25 and Race Strategy</span>
+                            <span class="tech-tag">Shanghai GP</span>
+                            <span class="tech-tag">RedBull and Max Verstappen</span>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card">
+                       
+                        <img src="images/mechanical-eng.jpg" alt="Mechanical engineering diagram or CAD model">
+                        <div class="card-content">
+                            <h3>⚙️ Mechanical Engineering</h3>
+                            <p>I'm fascinated by how things work — from engine combustion to suspension systems. I self-study thermodynamics, fluid mechanics, and CAD modeling. Engineering thinking helps me write better, more logical code.</p>
+                            <span class="tech-tag">Thermodynamics</span>
+                            <span class="tech-tag">CAD</span>
+                            <span class="tech-tag">Problem Solving</span>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card">
+                        
+                        <img src="images/reading.jpg" alt="Stack of books on a desk">
+                        <div class="card-content">
+                            <h3>📚 Reading</h3>
+                            <p>I read 20+ books a year — from engineering textbooks to sci-fi and biographies. </p>
+                            <span class="tech-tag">Non-Fiction</span>
+                            <span class="tech-tag">Sci-Fi</span>
+                            <span class="tech-tag">Biographies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="un-goal" class="un-goal">
+            <div class="container">
+                <div class="un-content">
+                    <div class="un-text">
+                        <span class="un-badge">UN Global Goal #7</span>
+                        <h2>Affordable & Clean Energy</h2>
+                        <p>Ensure access to affordable, reliable, sustainable and modern energy for all.</p>
+                        <p>As someone passionate about <strong>mechanical engineering</strong>, I see how engineers are crucial to this goal — designing efficient turbines, solar panels, and wind energy systems. Formula 1's push toward sustainable fuels and hybrid engines also inspires me. Small innovations in energy efficiency can change the world.</p>
+                        <a href="https://sdgs.un.org/goals/goal7" target="_blank" class="btn-secondary">Learn More →</a>
+                    </div>
+                    <div class="un-image">
+                       
+                        <img src="images/un-goal.jpg" alt="UN Global Goal 7: Affordable and Clean Energy icon showing a light bulb and sun">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="accessibility" class="accessibility">
+            <div class="container">
+                <h2>Accessibility Statement</h2>
+                <div class="accessibility-grid">
+                    <div class="a11y-item">
+                        <span class="a11y-icon">🎨</span>
+                        <h3>High Contrast</h3>
+                        <p>Sufficient color contrast (4.5:1 minimum) for text readability.</p>
+                    </div>
+                    <div class="a11y-item">
+                        <span class="a11y-icon">⌨️</span>
+                        <h3>Keyboard Navigation</h3>
+                        <p>All interactive elements are reachable via Tab key.</p>
+                    </div>
+                    <div class="a11y-item">
+                        <span class="a11y-icon">📱</span>
+                        <h3>Responsive Design</h3>
+                        <p>Works seamlessly across desktop, tablet, and mobile.</p>
+                    </div>
+                    <div class="a11y-item">
+                        <span class="a11y-icon">🏷️</span>
+                        <h3>Semantic HTML & ARIA</h3>
+                        <p>Proper heading hierarchy and aria-labels for screen readers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <p style="text-align: center; margin-bottom: 20px;">Love F1, engineering, or books? Let's chat!</p>
+                <form id="contactForm">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" rows="4" placeholder="Tell me about your favorite F1 team or book recommendation..."></textarea>
+                    <button type="submit" class="btn-primary">Send Message →</button>
+                    <p id="formFeedback" class="form-feedback"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2026 Justin Teng.</p>
+            <p>🏎️ F1 enthusiast | ⚙️ Engineering mind | 📚 Reading and Coding</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
