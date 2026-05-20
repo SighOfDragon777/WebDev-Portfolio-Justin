@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Thinking - Justin Teng</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+        .phase-card {
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 32px;
+            transition: transform 0.2s ease;
+        }
+        .phase-card:hover {
+            transform: translateX(8px);
+        }
+        .phase-number {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        .back-link {
+            margin-top: 48px;
+            text-align: center;
+        }
+        hr {
+            margin: 48px 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--secondary), transparent);
+        }
+    </style>
+</head>
+<body>
 
+    <header>
+        <nav class="navbar">
+            <div class="logo">JT<span>.</span></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="design-thinking.html">Design Thinking</a></li>
+                <li><a href="behind-curtain.html">Behind the Curtain</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-container">
+            <h1>💡 Design Thinking Process</h1>
+            <p style="font-size: 1.2rem; color: var(--text-light); margin-bottom: 48px;">
+                How I applied human-centered design to build this portfolio — inspired by F1 engineering, mechanical problem-solving, and user empathy.
+            </p>
+
+            <div class="phase-card">
+                <div class="phase-number">1</div>
+                <h2>Empathize</h2>
+                <p>I put myself in the shoes of recruiters, peers, and potential collaborators. They want:</p>
+                <ul>
+                    <li>Clean, fast navigation</li>
+                    <li>Accessible content (screen reader friendly)</li>
+                    <li>A genuine sense of who I am — not just a template</li>
+                </ul>
+                <p><strong>F1 connection:</strong> Like an engineer designing a car for the driver, I designed this site for the user's experience.</p>
+            </div>
+
+            <div class="phase-card">
+                <div class="phase-number">2</div>
+                <h2>Define</h2>
+                <p><strong>Problem:</strong> Many portfolios look generic and lack personality. They don't tell a story about who you are.</p>
+                <p><strong>Solution:</strong> A responsive, accessible site that showcases my technical skills AND my three passions: F1, Mechanical Engineering, and Reading.</p>
+            </div>
+
+            <div class="phase-card">
+                <div class="phase-number">3</div>
+                <h2>Ideate</h2>
+                <p>I sketched 3 different layouts on paper (yes, paper!). I decided on:</p>
+                <ul>
+                    <li>Hero section with photo + introduction</li>
+                    <li>3-card grid for my hobbies (F1, Engineering, Books)</li>
+                    <li>UN Goal #7 (Clean Energy) — tied to engineering</li>
+                    <li>Accessibility statement to show I care about inclusion</li>
+                </ul>
+                <p><strong>Color palette inspired by:</strong> Ferrari Red (#E63946) + Engineering Blue (#1E3A5F) + Clean Energy Teal (#2A9D8F)</p>
+            </div>
+
+            <div class="phase-card">
+                <div class="phase-number">4</div>
+                <h2>Prototype</h2>
+                <p>I built the website step by step:</p>
+                <ul>
+                    <li>HTML structure first (semantic tags: header, nav, main, section, footer)</li>
+                    <li>CSS for styling (Grid for portfolio, Flexbox for navbar)</li>
+                    <li>JavaScript for interactivity (form validation + dark mode toggle)</li>
+                </ul>
+                <p>I treated this like building a mechanical prototype — test early, iterate often.</p>
+            </div>
+
+            <div class="phase-card">
+                <div class="phase-number">5</div>
+                <h2>Test</h2>
+                <p>I tested on multiple browsers:</p>
+                <ul>
+                    <li>Chrome, Firefox, Edge</li>
+                    <li>Used Chrome DevTools to simulate iPhone 12, iPad, and Pixel 5</li>
+                    <li>Fixed mobile menu bugs and contrast issues</li>
+                </ul>
+                <p><strong>Just like testing an engine:</strong> You find the problems before the final lap.</p>
+            </div>
+
+            <hr>
+
+            <h3>📖 How Reading Influenced My Design</h3>
+            <p>Reading "The Design of Everyday Things" by Don Norman taught me that <strong>good design is invisible</strong>. Users shouldn't have to think about how to navigate — it should feel natural. That's why I used familiar patterns (top navbar, card grid, footer) and added clear hover states.</p>
+
+            <div class="back-link">
+                <a href="index.html" class="btn-primary">← Back to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2026 Justin Teng. Designed with empathy, built with code.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const navLinks = document.getElementById('navLinks');
+        const menuToggle = document.getElementById('menuToggle');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
