@@ -60,5 +60,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    console.log('✅ Website loaded! Justin Teng portfolio ready.');
+    console.log('✅ Website loaded!');
+});
+
+const audio = new Audio();
+
+audio.src = 'images/background-music.mp3';
+audio.loop = true; 
+audio.volume = 0.3; 
+
+const musicToggle = document.getElementById('musicToggle');
+const musicStatus = document.getElementById('musicStatus');
+
+let isPlaying = false;
+
+function toggleMusic() {
+    if (isPlaying) {
+        audio.pause();
+        isPlaying = false;
+        musicToggle.innerHTML = '<span class="music-icon">🎵</span><span class="music-text">Play Ambient Music</span>';
+        musicStatus.innerHTML = '⚪ Music paused';
+        musicStatus.style.opacity = '0.7';
+    } else {
+        audio.play().then(() => {
+            isPlaying = true;
+            musicToggle.innerHTML = '<span class="music-icon">🔊</span><span class="music-text">Pause Music</span>';
+            musicStatus.innerHTML = '🟢 Music playing (audio 30%)';
+            musicStatus.style.opacity = '1';
+        }).catch(error => {
+            console.log('Audio playback failed:', error);
+            musicStatus.innerHTML = '⚠️ Click again to play (browser policy)';
+        });
+    }
+}
+
+if (musicToggle) {
+    musicToggle.addEventListener('click', toggleMusic);
+}
+
+document.body.addEventListener('click', function initAudio() {
+    document.body.removeEventListener('click', initAudio);
+    audio.load();
+    console.log('🎵 Audio preloaded. Click the music button to play.');
+}, { once: true });
+
+audio.addEventListener('ended', () => {
+    if (isPlaying) {
+        audio.play();
+    }
 });
