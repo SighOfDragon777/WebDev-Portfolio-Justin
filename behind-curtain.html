@@ -1,1 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behind the Curtain - Justin Teng</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+        
+        .code-screenshot {
+            background: #1e1e2e;
+            border-radius: 16px;
+            padding: 20px;
+            margin: 24px 0;
+            overflow-x: auto;
+        }
+        
+        .code-screenshot pre {
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
+        .screenshot-image {
+            margin: 24px 0;
+            text-align: center;
+        }
+        
+        .screenshot-image img {
+            max-width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .screenshot-caption {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+        }
+        
+        .challenge-card {
+            background: var(--bg-light);
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 12px;
+        }
+        
+        .learnings-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .learnings-list li {
+            padding: 12px 0;
+            padding-left: 28px;
+            position: relative;
+        }
+        
+        .learnings-list li::before {
+            content: "✓";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        hr {
+            margin: 48px 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--secondary), transparent);
+        }
+        
+        .back-link {
+            margin-top: 48px;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .lesson-box {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 32px;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+        
+        .lesson-box .learnings-list li::before {
+            color: white;
+        }
+    </style>
+</head>
+<body>
 
+    <header>
+        <nav class="navbar">
+            <div class="logo">JT<span>.</span></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="design-thinking.html">Design Thinking</a></li>
+                <li><a href="behind-curtain.html">Behind the Curtain</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-container">
+            <h1>🔍 Behind the Curtain</h1>
+            <p style="font-size: 1.2rem; color: var(--text-light); margin-bottom: 40px;">
+                A peek into how I built this website — the code, the challenges, and the lessons learned.
+            </p>
+
+            <h2>📸 Code Screenshots (4 Key Sections)</h2>
+            <p>Here's what the code looks like behind the scenes. Below are 4 screenshots showing the most important parts of my website.</p>
+
+            <div class="screenshot-image">
+                <img src="images/screenshot-html.jpg" alt="HTML semantic structure showing header, nav, main, section, footer tags">
+                <div class="screenshot-caption">Screenshot #1: HTML Semantic Structure — header, nav, main, section, footer</div>
+            </div>
+
+            <div class="screenshot-image">
+                <img src="images/screenshot-css-grid.jpg" alt="CSS Grid portfolio layout with responsive grid-template-columns">
+                <div class="screenshot-caption">Screenshot #2: CSS Grid Portfolio Layout — responsive auto-fit grid</div>
+            </div>
+
+            <div class="screenshot-image">
+                <img src="images/screenshot-js-form.jpg" alt="JavaScript form validation code checking email for @ symbol">
+                <div class="screenshot-caption">Screenshot #3: JavaScript Form Validation — email validation logic</div>
+            </div>
+
+            <div class="screenshot-image">
+                <img src="images/screenshot-js-darkmode.jpg" alt="JavaScript dark mode toggle with classList.toggle">
+                <div class="screenshot-caption">Screenshot #4: JavaScript Dark Mode Toggle — classList.toggle implementation</div>
+            </div>
+
+            <hr>
+
+            <h2>⚠️ The Challenging Parts</h2>
+            
+            <div class="challenge-card">
+                <h3>🚧 Challenge #1: Responsive Grid on Mobile</h3>
+                <p><strong>Problem:</strong> On small screens, the portfolio cards were too wide and overflowing.</p>
+                <p><strong>Solution:</strong> I used <code>grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))</code> instead of fixed pixel widths. This allows cards to shrink and stack automatically.</p>
+                <p><strong>Tools used:</strong> Chrome DevTools → Toggle Device Toolbar (Ctrl+Shift+M) to test iPhone SE and Pixel 5.</p>
+            </div>
+
+            <div class="challenge-card">
+                <h3>🚧 Challenge #2: Dark Mode Toggle Persistence</h3>
+                <p><strong>Problem:</strong> When you refresh the page, dark mode resets to light mode.</p>
+                <p><strong>Solution (planned improvement):</strong> Use <code>localStorage</code> to save the user's preference:</p>
+                <div class="code-screenshot" style="margin-top: 12px;">
+                    <pre><code>// Save dark mode preference
+localStorage.setItem('theme', 'dark');
+// Load on page load
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="challenge-card">
+                <h3>🚧 Challenge #3: Mobile Menu Not Closing After Click</h3>
+                <p><strong>Problem:</strong> On mobile, after clicking a nav link, the menu stayed open, blocking content.</p>
+                <p><strong>Solution:</strong> Added a JavaScript event listener to close the menu when any nav link is clicked:</p>
+                <div class="code-screenshot" style="margin-top: 12px;">
+                    <pre><code>navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});</code></pre>
+                </div>
+            </div>
+
+            <div class="challenge-card">
+                <h3>🚧 Challenge #4: Background Music Autoplay Policy</h3>
+                <p><strong>Problem:</strong> Modern browsers block autoplay. Music wouldn't start.</p>
+                <p><strong>Solution:</strong> Used a button that requires user interaction first. This is actually better UX — users control when music starts.</p>
+            </div>
+
+            <hr>
+
+            <h2>🛠️ Developer Tools Usage</h2>
+            <p>Here's how I used browser DevTools to debug and optimize the website:</p>
+
+            <ul class="learnings-list" style="margin: 30px 0;">
+                <li><strong>Elements Panel</strong> — Edit HTML/CSS in real time, test colors and spacing instantly</li>
+                <li><strong>Console Panel</strong> — Debug JavaScript errors, check variable values</li>
+                <li><strong>Network Panel</strong> — Verify Google Fonts loaded successfully (status code 200)</li>
+                <li><strong>Lighthouse</strong> — Run performance tests, got 92/100 Accessibility score</li>
+                <li><strong>Device Toolbar</strong> — Simulate iPhone/Android devices, test responsive layout</li>
+            </ul>
+
+            <hr>
+
+            <h2>📚 What I Learned From This Process</h2>
+            
+            <div class="lesson-box">
+                <p style="font-size: 1.2rem; margin-bottom: 20px;"><strong>🏎️⚙️📖 Lessons from F1, Engineering & Reading:</strong></p>
+                <ul class="learnings-list" style="color: white;">
+                    <li><strong>From F1:</strong> Every millisecond matters — just like every byte of code. Optimize images and minimize CSS for faster load times.</li>
+                    <li><strong>From Mechanical Engineering:</strong> A system is only as strong as its weakest component. Same with code — one broken link breaks the user's trust.</li>
+                    <li><strong>Accessibility is not optional</strong> — Adding alt text, semantic HTML, and keyboard navigation makes the web better for everyone.</li>
+                    <li><strong>CSS Grid is a game-changer</strong> — It makes responsive layouts so much easier than floats or complex flexbox hacks.</li>
+                    <li><strong>Always test on real devices</strong> — DevTools simulation is good, but nothing beats testing on an actual phone.</li>
+                </ul>
+            </div>
+
+            <div class="stats-grid">
+                <div>
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">HTML Pages</div>
+                </div>
+                <div>
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">CSS Media Queries</div>
+                </div>
+                <div>
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">JS Interactions</div>
+                </div>
+                <div>
+                    <div class="stat-number">92</div>
+                    <div class="stat-label">Lighthouse Score</div>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2>📁 Complete Project File Structure</h2>
+            <div class="code-screenshot">
+                <pre><code>My_Portfolio_Website/
+│
+├── index.html
+├── styles.css
+├── script.js
+├── design-thinking.html
+├── behind-curtain.html
+│
+└── images/
+    ├── profile.jpg
+    ├── f1-racing.jpg
+    ├── mechanical-eng.jpg
+    ├── reading.jpg
+    ├── un-goal.jpg
+    ├── background-music.mp3
+    ├── screenshot-html.jpg
+    ├── screenshot-css-grid.jpg
+    ├── screenshot-js-form.jpg
+    └── screenshot-js-darkmode.jpg</code></pre>
+            </div>
+
+            <div class="back-link">
+                <a href="index.html" class="btn-primary">← Back to Homepage</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2026 Justin Teng. Built with HTML, CSS & JavaScript.</p>
+            <p>🏎️ F1 enthusiast | ⚙️ Engineering mind | 📚 Avid reader</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const navLinks = document.getElementById('navLinks');
+        const menuToggle = document.getElementById('menuToggle');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
