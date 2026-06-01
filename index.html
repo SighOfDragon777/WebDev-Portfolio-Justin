@@ -29,7 +29,7 @@
                 <div class="hero-text">
                     <p class="greeting">Hi, I'm</p>
                     <h1>Justin Teng</h1>
-                    <p class="title">Web Developer | Mechanical Engineering Enthusiast | F1 Fanatic | Reader</p>
+                    <p class="title">Web Developer | Mechanical Engineering Enthusiast | F1 Fans | Reader</p>
                     <p class="description">I build responsive, accessible websites with clean code. When I'm not coding, you'll find me analyzing F1 race strategies, studying mechanical systems, or getting lost in a good book.</p>
                     <a href="#portfolio" class="btn-primary">Explore My World →</a>
                 </div>
@@ -45,9 +45,10 @@
             <div class="container">
                 <h2>My Passions & Projects</h2>
                 <p class="section-subtitle">Three things that drive me — both on and off the screen</p>
-                <div class="portfolio-grid">
+                <div class="portfolio-grid"> 
                     
-                    <div class="portfolio-card"></div>
+                
+                    <div class="portfolio-card">
                         <img src="images/f1-racing.jpg" alt="Formula 1 car racing on track at high speed">
                         <div class="card-content">
                             <h3>🏎️ Formula 1</h3>
@@ -58,8 +59,8 @@
                         </div>
                     </div>
 
+                
                     <div class="portfolio-card">
-                       
                         <img src="images/mechanical-eng.jpg" alt="Mechanical engineering diagram or CAD model">
                         <div class="card-content">
                             <h3>⚙️ Mechanical Engineering</h3>
@@ -70,20 +71,21 @@
                         </div>
                     </div>
 
+                
                     <div class="portfolio-card">
-                        
                         <img src="images/reading.jpg" alt="Stack of books on a desk">
                         <div class="card-content">
                             <h3>📚 Reading</h3>
-                            <p>I read 20+ books a year — from engineering textbooks to sci-fi and biographies. </p>
+                            <p>I read 10+ books a year — from engineering textbooks to sci-fi and novels.</p>
                             <span class="tech-tag">Non-Fiction</span>
                             <span class="tech-tag">Sci-Fi</span>
                             <span class="tech-tag">Biographies</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+
+                </div> 
+            </div>  
+        </section> 
 
         <section id="un-goal" class="un-goal">
             <div class="container">
@@ -143,6 +145,20 @@
                     <button type="submit" class="btn-primary">Send Message →</button>
                     <p id="formFeedback" class="form-feedback"></p>
                 </form>
+            </div>
+        </section>
+
+        <section class="music-player">
+            <div class="container">
+                <div class="music-controls">
+                    <button id="musicToggle" class="music-btn" aria-label="Play background music">
+                        <span class="music-icon">🎵</span>
+                        <span class="music-text">Play Ambient Music</span>
+                    </button>
+                    <div class="music-status" id="musicStatus">
+                        ⚪ Music paused
+                    </div>
+                </div>
             </div>
         </section>
     </main>
